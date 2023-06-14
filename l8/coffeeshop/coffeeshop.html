@@ -1,0 +1,56 @@
+<!--]}   -->
+<html>
+	<head>
+		<title> Ishika Coffee Shop </title>
+		<style> * { font-family: Courier; font-size: 40px; }
+			body { background-color:lightgreen; }
+			input[type=radio] { border: 0px; width: 5%; height: 1em;} 
+			
+		</style>
+	
+	</head>
+ 	<body>
+	<center>
+	<h1> COFFEE SHOP </h1>
+	<input type="text" placeholder="Enter your name" id="name"> </input><br/><br/>
+	<input type="radio" name="r1" value="Small" id="small" >Small
+	<input type="radio" name="r1" value="Medium" id="medium" >Medium
+	<input type="radio" name="r1" value="Large" id="large" >Large </input><br/><br/>
+	<input type="submit" value="Order" onclick="placeorder()" />
+	<h1 id="ans"></h1>
+	</center>
+	<script>
+		function placeorder()
+		{
+			let name = document.getElementById("name");
+			let small = document.getElementById("small");
+			let medium = document.getElementById("medium");
+			let large = document.getElementById("large");
+			let ans = document.getElementById("ans");
+			
+			if ( (name.value == "") || (! name.value.match(/^[A-z]+$/)))
+			{
+				alert("Invalid name");
+				name.value="";
+				ans.innerHTML="";
+				name.focus();
+				return;
+			}
+
+			if ( (! small.checked) && (! medium.checked) && (! large.checked))
+			{
+				alert("Please Select any one coffee size");
+				return;
+			}
+
+			let size = "";
+			if (small.checked) size = "Small";
+			else if (medium.checked) size = "Medium";
+			else size = "Large";
+			let msg = "Name: " + name.value + " Size: " + size;
+			ans.innerHTML = msg;
+		}
+
+	</script>
+	</body>
+</html>

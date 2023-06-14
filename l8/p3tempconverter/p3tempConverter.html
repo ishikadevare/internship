@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<title>Temp Converter by Ishh </title>
+		<link rel="stylesheet" href="c1.css"/>
+	</head>
+	<body>
+	<center>
+	<h1> Temp Converter </h1>
+	<label> Celcius </label>
+	<input type="number" placeholder="Temp in cel" id="cel"/>
+	<br/><br/>
+	<label> Fahrenheit </label>
+	<input type="number" placeholder="Temp in fah" id="fah"/>
+	<br/><br/>
+
+	</center>
+	<script>
+	let cel = document.getElementById("cel");
+	let fah = document.getElementById("fah");
+	
+	cel.addEventListener("input", function() {
+		let c = cel.value;
+		let f = (c * 9/5) + 32;
+		fah.value = f.toFixed(2);
+	});
+	
+	fah.addEventListener("input", function() {
+		let f = fah.value;
+		let c = (f - 32) * 5/9;
+		cel.value = c.toFixed(2);
+	});
+		
+	</script>
+	</body>
+
+
+</html>

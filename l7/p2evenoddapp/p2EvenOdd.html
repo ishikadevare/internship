@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<title>Even Odd App by Ishika</title>
+		<style> * { font-size: 50px; font-family: Courier; }
+			.h { background-color: black; color: white; }
+			body { background-image: linear-gradient(135deg, white, lightgreen, darkblue); }
+		</style>
+	</head>
+	<body>
+	<center>
+	<h1 class= "h"> Even Odd App </h1>
+	<input type="number" placeholder="enter integer" id ="num"> </input><br/><br/>
+	<input type="submit" onclick="check()" value="Find Even/Odd"> </input><br/><br/>
+	<h1 id="ans"> </h1>
+	</center>
+	<script>
+	function check()
+	{
+		let num = document.getElementById("num");
+		let ans = document.getElementById("ans");
+		
+		if (num.value == "")
+		{
+			alert("Invalid Input");
+			num.focus();
+			ans.innerHTML = "";
+			return;
+		}
+		
+		if ( ! num.value.match(/^[-0-9]+$/))
+		{
+			alert("Integers only");
+			num.value = "";
+			num.focus();
+			ans.innerHTML = "";
+			return;
+		}
+		let res = num.value % 2 == 0 ? "even" : "odd";
+		ans.innerHTML = "Result: " + res;
+	}
+
+	</script>
+	</body>
+</html>

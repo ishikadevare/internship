@@ -1,0 +1,29 @@
+<html>
+	<head> 
+		<title> Motivation Quotes App by Ishika </title>
+	</head>
+	<body>
+	<center>
+		<h1> Motivational App </h1>
+		<h1 id="quo"> </h1>
+		<h1 id="tag"> </h1>
+	</center>
+	<script>
+		function getquote()
+		{
+			let quo = document.getElementById("quo");
+			let tag = document.getElementById("tag");
+			let urladd = "https://api.quotable.io/random?tags=humor";
+			fetch(urladd)
+			.then( res => res.json())
+			.then( data => {
+			quo.innerHTML = data.content;
+			tag.innerHTML = data.tags;
+			})
+			.catch(err => console.log(err));
+		}
+		getquote();
+		setInterval(getquote, 4000);
+	</script>
+	</body>
+</html>

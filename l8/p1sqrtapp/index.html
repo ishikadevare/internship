@@ -1,0 +1,45 @@
+<!--]}   -->
+<html>
+	<head>
+		<title> Square Root Finder by Ishika </title>
+		<style>	
+			* { font-family: Courier; font-size: 40px; }
+			body { background-color:lightgreen; }
+		</style>
+	<script>
+	function find()
+	{
+		let num = document.getElementById("num");
+		let ans = document.getElementById("ans");
+
+		if (num.value == "")
+		{
+			alert("input is empty");
+			num.focus();
+			ans.innerHTML = "";
+			return;
+		}
+		let n = parseFloat(num.value);
+		if (n < 0)
+		{
+			alert("Don't be negative");
+			num.value = "";
+			num.focus();
+			ans.innerHTML = "";
+			return;
+		}
+		let r = Math.sqrt(n);
+		let msg = "square root = " + r.toFixed(2);
+		ans.innerHTML = msg;
+	}
+	</script>
+	</head>
+	<body>
+	<center>
+	<h1> Square Root Finder </h1>
+	<input type="number" placeholder="enter number" id="num"> </input><br/><br/>
+	<input type="submit" value="Find Square Root" onclick="find()"> </input>
+	<h1 id="ans"> </h1>
+	</center>
+	</body>
+</html>

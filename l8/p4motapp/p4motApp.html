@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title>Motivational Quote App by Ishh </title>
+		<link rel="stylesheet" href="c1.css"/>
+	</head>
+
+	<body>
+		<center>
+	<h1> Motivational Quotes </h1>
+	<input type="button" value="Get Quote" onclick="getquote()" /><br/><br/>
+	<h1 id="auth"> </h1>
+	<h1 id="quo"> </h1>
+		</center>
+	<script>
+	function getquote()
+	{
+		let auth = document.getElementById("auth");
+		let quo = document.getElementById("quo");
+		let urladd = "https://api.quotable.io/random";
+		fetch(urladd)
+		.then( res => res.json() )
+		.then( data => {
+			auth.innerHTML = "Author: " + data.author;
+			quo.innerHTML = "Quote: " + data.content;
+	})
+	.catch(err => console.log(err) )
+	}	
+	</script>
+	</body>
+</html>

@@ -1,0 +1,101 @@
+#container{
+    width: 1000px;
+    height: auto;
+    margin: auto;
+}
+
+.one{
+    width: 250px;
+    height: 300px;
+    background-color: lightblue;
+    float:left; 
+}
+
+.two{
+    width: 250px;
+    height: 300px;
+    background-color: yellowgreen;
+    float:left; 
+}
+
+.three{
+    width: 250px;
+    height: 300px;
+    background-color:lightslategray;
+    float:left; 
+}
+
+.four{
+    width: 250px;
+    height: 300px;
+    background-color: lightcyan;
+    float:left; 
+}
+
+
+@media screen and (max-width:999px){
+    #container{
+        width: 100%;
+        height: auto;
+        margin: auto;
+    }
+    
+    .one{
+        width: 50%;
+        height: 300px;
+        background-color: red;
+        float:left; 
+    }
+    
+    .two{
+        width: 50%;
+        height: 300px;
+        background-color: yellow;
+        float:left; 
+    }
+    
+    .three{
+        width: 50%;
+        height: 300px;
+        background-color: darkblue;
+        float:left; 
+    }
+    
+    .four{
+        width: 50%;
+        height: 300px;
+        background-color: coral;
+        float:left; 
+    }
+}
+
+@media screen and (max-width:600px){
+    #container{
+        width:100%;
+        height:auto;
+        margin:auto;
+    }
+    .one{
+        width:100%;
+        height:300px;
+        background-color: black;
+            }
+    .two{
+        width:100%;
+        height:300px;
+        background-color: violet;
+        float:left;
+    }
+    .three{
+        width:100%;
+        height:300px;
+        background-color: green;
+        float:left;
+    }
+    .four{
+        width:100%;
+        height:300px;
+        background-color: orange;
+        float:left;
+    }
+}

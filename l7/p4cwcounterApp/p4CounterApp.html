@@ -1,0 +1,28 @@
+<!--]}   -->
+<html>
+<head>
+<title> CW Counter App by Ishika </title>
+<style> </style>
+</head>
+<body>
+<center>
+<h1 class= "kk"> CW Counter App </h1>
+<textarea placeholder="Enter Text" id="txt" rows=10 cols=100 style="resize:none;"></textarea>
+<br/><br/>
+<h1 id="ans"> </h1>
+</center>
+<script>
+	let txt = document.getElementById("txt");
+	let ans = document.getElementById("ans");
+
+	txt.addEventListener('input', function() {
+		let cc= txt.value.length;
+		let wc= txt.value.split(" ").length;
+		let msg = "CC: " + cc + " WC: " + wc;
+		ans.innerHTML = msg;
+	});
+
+</script>
+
+</body>
+</html>

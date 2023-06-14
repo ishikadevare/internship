@@ -1,0 +1,29 @@
+/*]}
+<html>
+	<head> 
+		<title> Welcome App by Ishika </title>
+		<style> * { font-size: 50px; } </style>
+	</head>
+	<body>
+		<center>
+		<h1> Welcome App </h1>
+		<h1 id= "m1"> </h1>
+		<h1 id= "m2"> </h1>
+	<script>
+		let m1 = document.getElementById("m1");
+		let m2 = document.getElementById("m2");
+		let d = new Date();
+		let hr = d.gethours();
+		let msg = "";
+		if (hr < 12)
+			msg = "Good Morning";
+		else if (hr < 16)
+			msg = "Good Afternoon";
+		else
+			msg = "Good Evening";
+		m1.innerHTML = "Good Evening";
+		m2.innerHTML= "Welcome to JS";
+	</script>
+	</center>
+	</body>
+</html>

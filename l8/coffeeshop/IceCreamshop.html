@@ -1,0 +1,64 @@
+<!--]}   -->
+<html>
+	<head>
+		<title> Ishika Ice-Cream Shop </title>
+		<style> * { font-family: Courier; font-size: 40px; }
+			body { background-color:lightgreen; }
+			input[type=checkbox] { border: 0px; width: 5%; height: 1em;} 
+			
+		</style>
+	
+	</head>
+ 	<body>
+	<center>
+	<h1> ICE-CREAM SHOP </h1>
+	<input type="text" placeholder="Enter your name" id="name"> </input><br/><br/>
+	<input type="checkbox" name="c1" value="cherries" id="cherries" onclick="checkbox()" > Cherries
+	<input type="checkbox" name="c1" value="candy" id="candy" onclick="checkbox()" > Candy
+	<input type="checkbox" name="c1" value="sprinkles" id="sprinkles" onclick="checkbox()" >Sprinkles </input>
+    <input type="checkbox" name="c1" value="jelly" id="jelly" onclick="checkbox()" >Jelly </input><br/><br/>
+	<input type="submit" value="Order" onclick="placeorder(); printChecked();" />
+	<h1 id="ans"></h1>
+	</center>
+	<script>
+		function placeorder()
+		{
+			let name = document.getElementById("name");
+			let cherries = document.getElementById("cherries");
+			let candy = document.getElementById("candy");
+			let sprinkles = document.getElementById("sprinkles");
+            let jelly = document.getElementById("jelly");
+			let ans = document.getElementById("ans");
+			
+			if ( (name.value == "") || (! name.value.match(/^[A-z]+$/)))
+			{
+				alert("Invalid name");
+				name.value="";
+				ans.innerHTML="";
+				name.focus();
+				return;
+			}
+            
+           
+        }
+
+        function printChecked() {
+            let name = document.getElementById("name");
+            let items = document.getElementsByName("c1");
+            let selectedItems = "";
+            for (let i = 0; i < items.length; i++) {
+                if (items[i].type == "checkbox" && items[i].checked == true) selectedItems += items[i].value + "\n";
+            }
+            if ( (! cherries.checked) && (! candy.checked) && (! sprinkles.checked) && (! jelly.checked))
+			{
+				alert("Please Select atleast one topping");
+				
+				return;
+			}
+            let msg = "Name: " + name.value +","+ " Toppings: " + selectedItems;
+			ans.innerHTML = msg;
+        }    
+		
+	</script>
+	</body>
+</html>

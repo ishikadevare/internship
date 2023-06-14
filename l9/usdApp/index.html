@@ -1,0 +1,49 @@
+<html>
+	<head>
+	<title>  </title>
+	</head>
+	<body>
+	<center>
+		<h1> USD Rate App </h1>
+		<h1 id="rate"> </h1>
+	<script>
+		function getrate()
+		{
+			let rate = document.getElementById("rate");
+			let urladd = "https:api.exchangerate-api.com/v4/latest/USD";
+			fetch(urladd)
+			.then( res => res.json())
+			.then( data => rate.innerHTML = data.rates.INR)
+			.catch( err => console.log(err))
+		}
+		getrate()
+		setInterval(getrate, 60*60*1000)
+	</script>
+	<h1> Currency Converter </h1>
+	<label> INR </label>
+	<input type="number" placeholder="Enter amt in RS" id="rup"/>
+	<br/><br/>
+	<label> USD </label>
+	<input type="number" placeholder="Enter amt in USD" id="usd"/>
+	
+
+	<script>
+	let rup = document.getElementById("rup");
+	let usd = document.getElementById("usd");
+	let rate = document.getElementById("rate");
+
+	rup.addEventListener("input", function() {
+		let r = rup.value;
+		let d = r / parseFloat(rate.innerHTML);
+		usd.value = d.toFixed(2);
+	});
+	
+	usd.addEventListener("input", function() {
+		let d = usd.value;
+		let r = d * parseFloat(rate.innerHTML);
+		rup.value = r.toFixed(2);
+	});
+		
+	</script>
+	
+</html>
